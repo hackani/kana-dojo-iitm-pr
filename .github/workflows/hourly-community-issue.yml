@@ -963,11 +963,7 @@ jobs:
 
               const tmpl = t.wallpaperUrl;
               const common = t.common;
-              issueTitle = common.shortTitleTemplate
-                .replace('{emoji}', pickEmoji())
-                .replace('{issueType}', 'Wallpaper URL')
-                .replace('{id}', item.id)
-                .trim();
+              issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
               const instructions = [
                 '1. Star our repo ⭐',
                 '2. Fork our repo 🍴',
@@ -1008,11 +1004,7 @@ jobs:
 
               const tmpl = t.communityNote;
               const common = t.common;
-              issueTitle = common.shortTitleTemplate
-                .replace('{emoji}', pickEmoji())
-                .replace('{issueType}', 'Community Note Line')
-                .replace('{id}', item.id)
-                .trim();
+              issueTitle = t.buildIssueTitle(pickEmoji(), tmpl.title.replace('{id}', item.id));
               const instructions = [
                 '1. Star our repo ⭐',
                 '2. Fork our repo 🍴',
